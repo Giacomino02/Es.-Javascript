@@ -5,6 +5,14 @@ const person = {
   age: 25,
 };
 
-const json = JSON.stringify(person, ['id', 'age']);
+const json = JSON.stringify(person, fn);
+
+function fn(key, value) {
+  if (typeof value == 'string'){
+    return undefined;
+  } else {
+    return value;
+  }
+}
 
 console.log(json); // Should return: { id: 1, age: 25 }

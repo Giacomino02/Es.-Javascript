@@ -8,7 +8,7 @@ const person2 = person1;
 
 person2.firstName = 'Simon';
 
-//Viene modificato anche person 1 in quanto person2 è stato definito uguale a person1, quindi modificandone uno cambia anche l altro.
+// Quando si assegna un object (person1) ad un altro (person2) in modo diretto entrambi puntano alla stessa locazione di memoria e di conseguenza entrambi prendono le modifiche successive (in questo caso "Simon")
 
 // Modifica la proprietà "firstName" di person2 in "Simon"
 

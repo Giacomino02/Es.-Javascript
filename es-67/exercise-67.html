@@ -1,0 +1,28 @@
+<html>
+<body>
+  <div id="container" style="display: flex; align-items: center;"></div>
+</body>
+</html>
+
+<script>
+  window.addEventListener('load', async () => {
+    const todoRequest = await fetch('https://jsonplaceholder.typicode.com/todos/4')
+    .then(response => response.json())
+    .then(data => data)
+    console.log(todoRequest);
+
+    const h2 = document.createElement('h2');
+    h2.innerText = todoRequest.title;
+
+    const input = document.createElement('input');
+    input.setAttribute('type', 'checkbox');
+    if(todoRequest.completed){
+      input.setAttribute('checked', true)
+    };
+
+    const container = document.querySelector('#container');
+    container.append(h2);
+    container.append(input)
+
+  })
+</script>
